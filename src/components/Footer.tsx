@@ -127,12 +127,33 @@ const Footer: React.FC = () => {
           <FooterTitle>Contact</FooterTitle>
           <FooterLinks>
             <FooterLink>
-              <a href="mailto:asif.kalsoum@gmail.com">asif.kalsoum@gmail.com</a>
-            </FooterLink>
-            <FooterLink>
               <a href="#">Toronto, Ontario</a>
             </FooterLink>
           </FooterLinks>
+          <SocialLinks>
+            <SocialLink 
+              href="https://github.com/um-e-kalsoum" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <i className="fab fa-github"></i>
+            </SocialLink>
+            <SocialLink 
+              href="https://www.linkedin.com/in/um-e-kalsoum-asif/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i className="fab fa-linkedin-in"></i>
+            </SocialLink>
+            <SocialLink 
+              href="mailto:asif.kalsoum@gmail.com"
+              aria-label="Email"
+            >
+              <i className="fas fa-envelope"></i>
+            </SocialLink>
+          </SocialLinks>
         </FooterColumn>
       </FooterContent>
     </FooterContainer>

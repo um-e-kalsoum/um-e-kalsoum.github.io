@@ -149,6 +149,43 @@ const SecondaryButton = styled(motion.button)`
   }
 `;
 
+const SocialLinks = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  
+  @media (max-width: 480px) {
+    justify-content: center;
+  }
+`;
+
+const SocialIcon = styled.a`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(226, 115, 150, 0.3);
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  @media (max-width: 480px) {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+`;
+
 const BackgroundShape = styled(motion.div)`
   position: absolute;
   width: 500px;
@@ -256,6 +293,37 @@ const Hero: React.FC = () => {
               Contact Me
             </SecondaryButton>
           </ButtonContainer>
+        </motion.div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1 }}
+        >
+          <SocialLinks>
+            <SocialIcon 
+              href="https://github.com/um-e-kalsoum" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <i className="fab fa-github"></i>
+            </SocialIcon>
+            <SocialIcon 
+              href="https://www.linkedin.com/in/um-e-kalsoum-asif/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <i className="fab fa-linkedin-in"></i>
+            </SocialIcon>
+            <SocialIcon 
+              href="mailto:asif.kalsoum@gmail.com"
+              aria-label="Email"
+            >
+              <i className="fas fa-envelope"></i>
+            </SocialIcon>
+          </SocialLinks>
         </motion.div>
       </HeroContent>
     </HeroContainer>

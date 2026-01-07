@@ -356,11 +356,6 @@ const Contact: React.FC = () => {
               <ContactTitle>Contact Information</ContactTitle>
               
               <ContactItem>
-                <ContactIcon>✉️</ContactIcon>
-                <ContactText>asif.kalsoum@gmail.com</ContactText>
-              </ContactItem>
-              
-              <ContactItem>
                 <ContactIcon>📍</ContactIcon>
                 <ContactText>Toronto, Ontario</ContactText>
               </ContactItem>
@@ -386,6 +381,15 @@ const Contact: React.FC = () => {
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+                  </svg>
+                </SocialButton>
+                <SocialButton 
+                  href="mailto:asif.kalsoum@gmail.com"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
                   </svg>
                 </SocialButton>
               </SocialButtons>
