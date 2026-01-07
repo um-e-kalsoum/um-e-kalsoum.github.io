@@ -398,7 +398,7 @@ const About: React.FC = () => {
           
           <TimelineSection>
             <SectionHeader>
-              🎓 Education
+              Education
             </SectionHeader>
             <TimelineContainer>
               <TimelineItem>
@@ -422,7 +422,7 @@ const About: React.FC = () => {
 
           <TimelineSection>
             <SectionHeader>
-              💼 Work Experience
+              Work Experience
             </SectionHeader>
             <TimelineContainer>
 
@@ -434,7 +434,7 @@ const About: React.FC = () => {
                   </LogoContainer>
                   <ItemInfo>
                     <DateRange>December 2025 - January 2026</DateRange>
-                    <ItemTitle>Web Designer & Developer </ItemTitle>
+                    <ItemTitle>Software Devloper Intern </ItemTitle>
                     <ItemSubtitle>Dairy Modernization</ItemSubtitle>
                     <BulletList>
                       <BulletItem>Independently designed and developed a full public-facing website for a government-funded national dairy modernization initiative.</BulletItem>
