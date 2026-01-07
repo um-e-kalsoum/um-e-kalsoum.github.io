@@ -95,6 +95,16 @@ const Description = styled.p`
   max-width: 600px;
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 20px;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 15px;
+  }
+`;
+
 const CTAButton = styled(motion.button)`
   padding: 15px 35px;
   font-size: 1.2rem;
@@ -109,6 +119,28 @@ const CTAButton = styled(motion.button)`
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(226, 115, 150, 0.3);
     background-color: #d06285;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+  }
+`;
+
+const SecondaryButton = styled(motion.button)`
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: var(--transition);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(226, 115, 150, 0.3);
+    background-color: #b8406b;
   }
   
   @media (max-width: 480px) {
@@ -140,6 +172,20 @@ const BackgroundShapeBottom = styled(motion.div)`
 `;
 
 const Hero: React.FC = () => {
+  const scrollToProjects = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <HeroContainer id="home">
       <BackgroundShape 
@@ -194,12 +240,22 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <CTAButton
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View My Work
-          </CTAButton>
+          <ButtonContainer>
+            <CTAButton
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={scrollToProjects}
+            >
+              View My Work
+            </CTAButton>
+            <SecondaryButton
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={scrollToContact}
+            >
+              Contact Me
+            </SecondaryButton>
+          </ButtonContainer>
         </motion.div>
       </HeroContent>
     </HeroContainer>

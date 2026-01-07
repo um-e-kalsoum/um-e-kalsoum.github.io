@@ -23,33 +23,42 @@ const AboutSection = styled.section`
 
 const ContentContainer = styled.div`
   display: flex;
-  align-items: center;
-  max-width: 1200px;
+  align-items: flex-start;
+  max-width: 1600px;
   margin: 0 auto;
   width: 100%;
+  gap: 60px;
+  padding: 0 40px;
   
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
+    gap: 40px;
+    padding: 0 20px;
   }
 `;
 
 const ImageContainer = styled(motion.div)`
-  flex: 1;
+  flex: 0 0 400px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  margin-top: 60px;
+  
+  @media (max-width: 968px) {
+    flex: 0 0 350px;
+  }
   
   @media (max-width: 768px) {
-    margin-bottom: 50px;
+    flex: 0 0 auto;
     order: -1;
+    margin-top: 0;
   }
 `;
 
 const ProfileImage = styled.div`
-  width: 350px;
-  height: 350px;
+  width: 380px;
+  height: 380px;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
@@ -72,6 +81,11 @@ const ProfileImage = styled.div`
     object-fit: cover;
   }
   
+  @media (max-width: 968px) {
+    width: 330px;
+    height: 330px;
+  }
+  
   @media (max-width: 768px) {
     width: 280px;
     height: 280px;
@@ -85,7 +99,7 @@ const ProfileImage = styled.div`
 
 const TextContainer = styled(motion.div)`
   flex: 1;
-  padding: 0 40px;
+  padding-right: 20px;
   
   @media (max-width: 768px) {
     padding: 0;
@@ -152,38 +166,125 @@ const Skill = styled(motion.div)`
   }
 `;
 
-const EducationSection = styled.div`
-  margin-top: 40px;
+const TimelineSection = styled.div`
+  margin-top: 30px;
   margin-bottom: 30px;
-`;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 
-const EducationTitle = styled.h3`
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  margin-bottom: 20px;
   
-  @media (max-width: 480px) {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+  &:first-of-type {
+    margin-top: 60px;
   }
 `;
 
-const EducationItem = styled.div`
+const SectionHeader = styled.h3`
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 40px;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  gap: 12px;
+  width: 100%;
+  padding: 0 20px;
+  
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+`;
+
+const TimelineContainer = styled.div`
+  position: relative;
+  width: 100%;
+  padding: 0 20px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 44px;
+    top: 16px;
+    bottom: 8px;
+    width: 2px;
+    background-color: rgba(226, 115, 150, 0.2);
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    &::before {
+      display: none;
+    }
+  }
+`;
+
+
+const TimelineItem = styled.div`
+  position: relative;
+  display: flex;
+  gap: 30px;
+  padding-left: 120px;
+  padding-bottom: 45px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 0;
+    padding-bottom: 35px;
+  }
+`;
+
+
+const TimelineDot = styled.div`
+  position: absolute;
+  left: 36px;
+  top: 22px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+
+const TimelineContent = styled.div`
+  flex: 1;
+  display: flex;
+  gap: 25px;
+
   
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 `;
 
-const EducationLogo = styled.div`
-  width: 100px;
-  height: 100px;
-  margin-right: 20px;
+const LogoContainer = styled.div`
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   
   img {
     width: 100%;
@@ -191,41 +292,90 @@ const EducationLogo = styled.div`
     object-fit: contain;
   }
   
-  @media (max-width: 768px) {
-    margin-right: 0;
-    margin-bottom: 15px;
+  @media (max-width: 480px) {
+    width: 70px;
+    height: 70px;
   }
 `;
 
-const EducationInfo = styled.div`
+const ItemInfo = styled.div`
   flex: 1;
 `;
 
-const EducationDegree = styled.h4`
-  font-size: 1.3rem;
+const DateRange = styled.p`
+  font-size: 1rem;
+  color: var(--accent-color);
   font-weight: 600;
+  margin-bottom: 10px;
+  
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+  }
+`;
+
+const ItemTitle = styled.h4`
+  font-size: 1.4rem;
+  font-weight: 700;
   color: var(--primary-color);
   margin-bottom: 8px;
   
   @media (max-width: 480px) {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 `;
 
-const EducationSchool = styled.p`
-  font-size: 1.2rem;
-  font-weight: 500;
+const ItemSubtitle = styled.p`
+  font-size: 1.1rem;
+  font-style: italic;
   color: var(--text-color);
-  margin-bottom: 8px;
+  margin-bottom: 15px;
+  opacity: 0.9;
   
   @media (max-width: 480px) {
     font-size: 1rem;
   }
 `;
 
-const EducationYear = styled.p`
+const ItemDescription = styled.p`
   font-size: 1rem;
-  color: var(--text-light);
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 12px;
+  
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+  }
+`;
+
+const BulletList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  @media (max-width: 768px) {
+    text-align: left;
+  }
+`;
+
+const BulletItem = styled.li`
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+  
+  &::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+  }
 `;
 
 const About: React.FC = () => {
@@ -240,28 +390,122 @@ const About: React.FC = () => {
         >
           <SectionTitle>About Me</SectionTitle>
           <Bio>
-            Hi there, I'm a Computer Science student pursing an area of emphasis in Cybersecurity and a minor in Mathematics with a passion for software development! I enjoy building intuitive applications that solve real-world problems.
+          I'm a Computer Science student specializing in Cybersecurity with a minor in Mathematics, driven by a passion for software development and problem-solving. I enjoy building intuitive, accessible applications that address real-world challenges, especially where logical thinking and mathematical reasoning play a key role.
           </Bio>
           <Bio>
-            As an aspiring software engineer, I focus on creating accessible and responsive web applications using modern technologies like React, TypeScript, and JavaScript.
-          </Bio>
-          <Bio>
-            When I'm not coding, I enjoy exploring new technologies, reading, and working on personal projects to expand my skills.
+          I'm naturally curious and enjoy collaborating with others, whether that's brainstorming ideas, learning from different perspectives, or tackling challenges as a team. As an aspiring software engineer, I focus on creating reliable, user-centered software with clean design and strong foundations. Outside of coding, I enjoy exploring new ideas, learning new concepts, and working on personal projects to continuously grow my skills.
           </Bio>
           
-          <EducationSection>
-            <EducationTitle>Education</EducationTitle>
-            <EducationItem>
-              <EducationLogo>
-                <img src="/images/uofg.png" alt="University of Guelph" />
-              </EducationLogo>
-              <EducationInfo>
-                <EducationDegree>Bachelor of Computing, Computer Science</EducationDegree>
-                <EducationSchool>University of Guelph</EducationSchool>
-                <EducationYear>2024-2028</EducationYear>
-              </EducationInfo>
-            </EducationItem>
-          </EducationSection>
+          <TimelineSection>
+            <SectionHeader>
+              🎓 Education
+            </SectionHeader>
+            <TimelineContainer>
+              <TimelineItem>
+                <TimelineDot />
+                <TimelineContent>
+                  <LogoContainer>
+                    <img src="/images/uofg.png" alt="University of Guelph" />
+                  </LogoContainer>
+                  <ItemInfo>
+                    <DateRange>2024 - 2028</DateRange>
+                    <ItemTitle>Bachelor of Computing, Computer Science</ItemTitle>
+                    <ItemSubtitle>University of Guelph</ItemSubtitle>
+                    <ItemDescription>
+                      Currently pursuing a Bachelor of Computing Degree in Computer Science with a specialization in Cybersecurity and a minor in Mathematics.
+                    </ItemDescription>
+                  </ItemInfo>
+                </TimelineContent>
+              </TimelineItem>
+            </TimelineContainer>
+          </TimelineSection>
+
+          <TimelineSection>
+            <SectionHeader>
+              💼 Work Experience
+            </SectionHeader>
+            <TimelineContainer>
+
+            <TimelineItem>
+                <TimelineDot />
+                <TimelineContent>
+                  <LogoContainer>
+                    <img src="/images/barn.png" alt="dairy modernization" />
+                  </LogoContainer>
+                  <ItemInfo>
+                    <DateRange>December 2025 - January 2026</DateRange>
+                    <ItemTitle>Web Designer & Developer </ItemTitle>
+                    <ItemSubtitle>Dairy Modernization</ItemSubtitle>
+                    <BulletList>
+                      <BulletItem>Independently designed and developed a full public-facing website for a government-funded national dairy modernization initiative.</BulletItem>
+                      <BulletItem>Built and customized a WordPress platform tailored to farmers, researchers, policymakers, and industry partners, focusing on clarity, accessibility, and ease of content management.</BulletItem>
+                      <BulletItem>Delivered a scalable digital hub designed to support a multi-year agricultural innovation project, enabling nationwide outreach, updates, and resource sharing.</BulletItem>
+                      <BulletItem>Designed the site with future growth in mind, allowing non-technical stakeholders to easily update content and expand features over time.</BulletItem>
+                    </BulletList>
+                  </ItemInfo>
+                </TimelineContent>
+              </TimelineItem>
+
+              <TimelineItem>
+                <TimelineDot />
+                <TimelineContent>
+                  <LogoContainer>
+                    <img src="/images/uofgOVC.png" alt="uofgOVC" />
+                  </LogoContainer>
+                  <ItemInfo>
+                    <DateRange>September 2025 - December 2025</DateRange>
+                    <ItemTitle>Software Developer Intern</ItemTitle>
+                    <ItemSubtitle>University of Guelph OVC</ItemSubtitle>
+                    <BulletList>
+                      <BulletItem>Led the end-to-end redesign and modernization of a molecular biology resource website used by researchers and students, improving usability, navigation, and long-term maintainability.</BulletItem>
+                      <BulletItem>Designed and implemented responsive mockups and full-stack prototypes using HTML, CSS, and JavaScript, ensuring cross-browser compatibility and WCAG accessibility compliance.</BulletItem>
+                      <BulletItem>Structured and organized large volumes of scientific content to improve discoverability, readability, and user experience across devices.</BulletItem>
+                      <BulletItem>Produced clear technical documentation and conducted client training sessions, enabling independent website maintenance, updates, and future content expansion.</BulletItem>
+                    </BulletList>
+                  </ItemInfo>
+                </TimelineContent>
+              </TimelineItem>
+
+              <TimelineItem>
+                <TimelineDot />
+                <TimelineContent>
+                  <LogoContainer>
+                    <img src="/images/GCSS.png" alt="guelph cybersecurity society" />
+                  </LogoContainer>
+                  <ItemInfo>
+                    <DateRange>September 2025 - Present</DateRange>
+                    <ItemTitle>Graphic Designer</ItemTitle>
+                    <ItemSubtitle>Guelph Cyber Security Society</ItemSubtitle>
+                    <BulletList>
+                      <BulletItem>Designed visual assets for the Guelph Cyber Security Society, including social media graphics, event promotions, and digital marketing materials.</BulletItem>
+                      <BulletItem>Collaborated with the executive team to create consistent branding aligned with the society’s identity and outreach goals.</BulletItem>
+                      <BulletItem>Produced clear, engaging designs that increased event visibility and improved member engagement across platforms.</BulletItem>
+                    </BulletList>
+                  </ItemInfo>
+                </TimelineContent>
+              </TimelineItem>
+
+              <TimelineItem>
+                <TimelineDot />
+                <TimelineContent>
+                  <LogoContainer>
+                    <img src="/images/gdg.png" alt="google developer groups" />
+                  </LogoContainer>
+                  <ItemInfo>
+                    <DateRange>September 2024 - Present</DateRange>
+                    <ItemTitle>Hackathon Organizer</ItemTitle>
+                    <ItemSubtitle>Google Developer Groups</ItemSubtitle>
+                    <BulletList>
+                      <BulletItem>Drove sponsorship strategy for GDG initiatives by researching potential partners and aligning proposals with sponsor goals.</BulletItem>
+                      <BulletItem>Built and sustained relationships with external organizations to ensure consistent funding and repeat partnerships.</BulletItem>
+                      <BulletItem>Supported the financial sustainability of GDG initiatives by contributing to sponsorship planning, outreach execution, and follow-up coordination.</BulletItem>
+                    </BulletList>
+                  </ItemInfo>
+                </TimelineContent>
+              </TimelineItem>
+
+            </TimelineContainer>
+          </TimelineSection>
         </TextContainer>
         
         <ImageContainer

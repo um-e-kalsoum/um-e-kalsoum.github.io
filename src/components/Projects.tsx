@@ -63,7 +63,7 @@ const ProjectCard = styled(motion.div)`
 
 const ProjectImage = styled.div`
   width: 100%;
-  height: 200px;
+  height: 300px;
   overflow: hidden;
   
   img {
@@ -139,11 +139,11 @@ const ProjectLink = styled.a`
   }
   
   &.secondary {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: white;
     
     &:hover {
-      background-color: #e5e5e7;
+      background-color: #b8406b;
     }
   }
 `;
@@ -170,47 +170,37 @@ const DetailText = styled.p`
 
 const Projects: React.FC = () => {
   const projectsData = [
+
     {
       id: 1,
-      title: 'BeautyHackxs',
-      description: 'Upload, analyze, and choose smarter, uncover hidden ingredients in your beauty products with ease.',
-      image: '/images/logo2.png',
-      tags: ['React', 'JavaScript', 'PHP', 'OCR'],
-      codeLink: 'https://github.com/um-e-kalsoum/beautyhackxsfinal',
-      detailedDescription: 'We built the frontend using HTML, CSS, and React JavaScript. The backend uses PHP with XAMPP for server-side functionality and phpMyAdmin for database management. We used OCR to extract text from uploaded images and compared ingredients against our database of flagged terms.'
-    },
+      title: 'Online Analysis Tools Redesign',
+      description: 'A Redesign of Professor Andrew Kropinskis Website',
+      image: '/images/OAT.png',
+      tags: ['HTML5/CSS'],
+      codeLink: 'https://github.com/um-e-kalsoum/OATredesign',
+      detailedDescription:
+      'Redesigned and modernized a molecular biology educational website for Professor Andrew Kropinski, focusing on improving usability, accessibility, and overall information structure for both researchers and students. Rebuilt the front end with a clean, maintainable codebase and delivered clear technical documentation to support long-term maintenance and future updates. Collaborated closely with the client.'
+},
 
     {
       id: 2,
-      title: 'Project Name',
-      description: 'Short one-line summary of what the project does.',
-      image: '/images/project-image.png',
-      tags: ['React', 'TypeScript', 'API'],
-      codeLink: 'https://github.com/yourusername/project-repo',
-      detailedDescription:
-      'Brief paragraph explaining what you built, the tech stack, and what problem it solves.'
+      title: 'Signify',
+      description: 'A Real Time ASL Interperter',
+      image: '/images/signify.png',
+      tags: ['Python' , 'Mediapipe' , 'OpenCV' , 'scikit-learn' , 'React.js', 'Vite', 'TailwindCSS'],
+      codeLink: 'https://github.com/um-e-kalsoum/technova2025',
+      detailedDescription:'Developed a real-time hand gesture recognition system using computer vision models to translate gestures into text, improving accessibility for the Deaf and Hard-of-Hearing community. Designed an inclusive, user-friendly interface with features such as light and dark modes and adjustable text sizes to support diverse user needs.'
 },
 
-    {
-      id: 3,
-      title: 'Project Name',
-      description: 'Short one-line summary of what the project does.',
-      image: '/images/project-image.png',
-      tags: ['React', 'TypeScript', 'API'],
-      codeLink: 'https://github.com/yourusername/project-repo',
-      detailedDescription:
-      'Brief paragraph explaining what you built, the tech stack, and what problem it solves.'
-},
+{
+  id: 3,
+  title: 'BeautyHackxs',
+  description: 'Upload, Analyze, and Choose Smarter Ingredients',
+  image: '/images/beautyh.png',
+  tags: ['React.js', 'HTML5/CSS', 'SQL', 'phpMyAdmin' , 'XAMPP', 'Gemini AI'],
+  codeLink: 'https://github.com/um-e-kalsoum/beautyhackxsfinal',
+  detailedDescription: 'A full-stack web application that allows users to scan beauty product barcodes and receive personalized ingredient analysis. Integrated Gemini AI to enable conversational ingredient-related Q&A, and implemented secure user authentication and data storage using MySQL and phpMyAdmin to ensure reliable and scalable data management.'
 
-    {
-      id: 4,
-      title: 'Project Name',
-      description: 'Short one-line summary of what the project does.',
-      image: '/images/project-image.png',
-      tags: ['React', 'TypeScript', 'API'],
-      codeLink: 'https://github.com/yourusername/project-repo',
-      detailedDescription:
-      'Brief paragraph explaining what you built, the tech stack, and what problem it solves.'
 }
 
   ];
