@@ -434,7 +434,7 @@ const About: React.FC = () => {
                   </LogoContainer>
                   <ItemInfo>
                     <DateRange>December 2025 - January 2026</DateRange>
-                    <ItemTitle>Software Devloper Intern </ItemTitle>
+                    <ItemTitle>Web Developer & Designer</ItemTitle>
                     <ItemSubtitle>Dairy Modernization</ItemSubtitle>
                     <BulletList>
                       <BulletItem>Independently designed and developed a full public-facing website for a government-funded national dairy modernization initiative.</BulletItem>
